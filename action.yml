@@ -1,0 +1,24 @@
+name: 'Ingredients Validator'
+description: 'Validate the freshness of cocktail ingredients'
+inputs:
+  mint:
+    description: 'Mint freshness level'
+    required: true
+  lime:
+    description: 'Lime freshness level'
+    required: true
+  ice:
+    description: 'Ice clarity level'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        echo "Checking mint freshness: ${{ inputs.mint }}"
+      shell: bash
+    - run: |
+        echo "Checking lime freshness: ${{ inputs.lime }}"
+      shell: bash
+    - run: |
+        echo "Checking ice clarity: ${{ inputs.ice }}"
+      shell: bash
